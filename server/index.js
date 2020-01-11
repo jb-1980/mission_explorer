@@ -36,11 +36,6 @@ app.get("/login", (req, res) => {
   kauth.authorize(res, callBackUrl)
 })
 
-app.get("/logout", (req, res) => {
-  res.clearCookie("tokens")
-  return res.sendStatus(200)
-})
-
 app.get("/authenticate_khan", async (req, res) => {
   // This is the route that Khan Academy will return to after the user
   // has given permission in the browser. It is the callbackUrl defined in the
